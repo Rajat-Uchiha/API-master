@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, createContext } from "react";
+import "./index.css";
+import Head from "./Components/Head";
+import Hero from "./Components/Hero";
+import Forjson from "./Components/Forjson";
+import Submit from "./Components/Submit";
+import Response from "./Components/Response";
+import Footer from "./Components/Footer";
+
+export const AppContext = createContext();
 
 function App() {
+  const [url, setUrl] = useState("");
+  const [requestValue, setRequestValue] = useState("get");
+  const [jsonObj, setJsonObj] = useState("Json");
+  const [response, setResponse] = useState("Your Response will be shown here!");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppContext.Provider
+        value={{
+          url,
+          setUrl,
+          requestValue,
+          setRequestValue,
+          jsonObj,
+          setJsonObj,
+          response,
+          setResponse,
+        }}
+      >
+        <Head />
+        <Hero />
+        <Forjson />
+        <Submit />
+        <Response />
+      </AppContext.Provider>
+      <Footer />
+    </>
   );
 }
 
