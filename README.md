@@ -17,7 +17,7 @@ To get started with API Master, follow these steps:
 1. **Clone the Repository:**
 
    ```
-   git clone https://github.com/Rajat-Uchiha/apimaster.git
+   git clone https://github.com/Rajat-Uchiha/API-master.git
    ```
 
 2. **Navigate to the Project Directory:**
